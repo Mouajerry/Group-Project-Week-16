@@ -16,10 +16,12 @@ var API = {
       data: JSON.stringify(example)
     });
   },
-  getExamples: function() {
+  getRecipes: function() {
     return $.ajax({
-      url: "api/examples",
-      type: "GET"
+      url: "api/get-recipes",
+      type: "POST"
+    }).then(function(response) {
+      console.log(response);
     });
   },
   deleteExample: function(id) {
