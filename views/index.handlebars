@@ -1,32 +1,57 @@
 <div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
+ <div class="container">
+   <div class="row">
+     <div class="col-12">
+      <div class="top-bar">
+ <div class="top-bar-left">
+   <ul class="dropdown menu" data-dropdown-menu>
+     <li class="menu-text">Golden Table</li>
+     <li>
+       <a href="#">Login</a>
+       <ul class="menu vertical">
+       </ul>
+     </li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+   </ul>
+ </div>
+ <div class="top-bar-right">
+   <ul class="menu">
+     <li><input type="search" placeholder="Search"></li>
+     <li><button type="button" class="button">Search</button></li>
+   </ul>
+ </div>
+</div>
+       <h2>Welcome to Golden Table</h2>
+       <div class="callout">
+ <h5>This is a callout.</h5>
+ <p>It has an easy to override visual style, and is appropriately subdued.</p>
+ <a href="#">It's dangerous to go alone, take this.</a>
+</div>
+
+       <form class="clearfix mb-4" action="POST">
+         <div class="form-group">
+           <label for="example-text">Example Text</label>
+           <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+         </div>
+         <div class="form-group">
+           <label for="example-description">Example Description</label>
+           <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+         </div>
+         <button id="submit" class="btn btn-primary float-right">Submit</button>
+       </form>
+       <h3>Examples:</h3>
+       <ul id="example-list" class="list-group">
+         {{#each examples}}
+         <li data-id="{{this.id}}" class="list-group-item">
+           <a href="example/{{this.id}}">{{this.text}}</a>
+           <button class="btn btn-danger float-right delete">ｘ</button>
+         </li>
+         {{/each}}
+       </ul>
+     </div>
+   </div>
+ </div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
