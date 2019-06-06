@@ -6,3 +6,11 @@
   text-align: center;
 }
 
+.top-bar, .top-bar ul {
+  background-color: peru;
+}
+
+.quote {
+  color: whitesmoke;
+  text-align: center;
+}
