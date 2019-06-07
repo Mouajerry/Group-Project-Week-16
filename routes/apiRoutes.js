@@ -70,7 +70,9 @@ module.exports = function(app) {
   //!ROUTE
   
     //Build the api query. First build the q parameter
-    let data = JSON.parse(req.body.cook);
+    console.log(req.body.ingredient);
+    // let data = JSON.parse(req.body);
+    let data = req.body.ingredient;
     let search = "q=";
     let recipeArray = [];
     let userIngredients = [];
