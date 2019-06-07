@@ -1,5 +1,5 @@
-const db = require("../models");
-const axios = require("axios");
+var db = require("../models");
+var axios = require("axios");
 
 module.exports = function(app) {
   app.post("/api/users", function(req, res) {
