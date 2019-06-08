@@ -6,14 +6,11 @@
   text-align: center;
 }
 
-.ml13 {
-  font-size: 1.9em;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-  font-weight: 600;
+.top-bar, .top-bar ul {
+  background-color: peru;
 }
 
-.ml13 .letter {
-  display: inline-block;
-  line-height: 1em;
+.quote {
+  color: whitesmoke;
+  text-align: center;
 }
