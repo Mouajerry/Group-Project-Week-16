@@ -18,7 +18,7 @@ module.exports = function(app) {
   //!ROUTE
   app.post("/api/add-ingredient/", function(req, res) {
 
-    let data = req.body
+    var data = req.body
 
     db.Ingredient.create
     ({ label: data.label,
@@ -39,7 +39,7 @@ module.exports = function(app) {
   //!ROUTE
   app.delete("/api/remove-ingredient/:ingredient", function(req, res) {
 
-    let ingredient = req.params.ingredient
+    var ingredient = req.params.ingredient
 
     db.Ingredient.destroy
     ({
@@ -72,14 +72,14 @@ module.exports = function(app) {
     //Build the api query. First build the q parameter
     console.log(req.body.ingredient);
     // let data = JSON.parse(req.body);
-    let data = req.body.ingredient;
-    let search = "q=";
-    let recipeArray = [];
-    let userIngredients = [];
+    var data = req.body.ingredient;
+    var search = "q=";
+    var recipeArray = [];
+    var userIngredients = [];
 
     console.log("\nincoming array: ",data);
 
-    for (let i = 0; i < data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
 
       if (i < (data.length - 1)) {
         search += data[i] + "+"
@@ -96,9 +96,9 @@ module.exports = function(app) {
     console.log("\nq:",search)
     //At this point the q parameter is constructed. Now build the rest of the api query.
 
-    let appID = process.env.appID;
-    let appKey = process.env.appKey;
-    let  query = "https://api.edamam.com/search?" + search + "&app_id=" + appID + "&app_key=" + appKey + "&from=0&to=8"
+    var appID = process.env.appID;
+    var appKey = process.env.appKey;
+    var  query = "https://api.edamam.com/search?" + search + "&app_id=" + appID + "&app_key=" + appKey + "&from=0&to=8"
 
     console.log("query:",query)
 
@@ -106,9 +106,9 @@ module.exports = function(app) {
     axios.get(query)
          .then( function(response) { 
 
-            let Recipe = response.data.hits
+            var Recipe = response.data.hits
                 
-            for ( let i = 0; i < Recipe.length; i++ ) {
+            for ( var i = 0; i < Recipe.length; i++ ) {
 
               console.log("\n")
               console.log(Recipe[i].recipe.label)
