@@ -1,3 +1,7 @@
+body {
+  background-image: url('../public/table-with-vegetables_1112-361.jpg');
+ }
+
 .list-group-item {
   line-height: 2.5;
 }
@@ -18,6 +22,14 @@
 #add {
   clear: both;
  
+}
+
+/* Ingredient Area */
+
+
+#add {
+  clear: both;
+  margin-left: 25%;
 }
 
 .stepText {
