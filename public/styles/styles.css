@@ -1,3 +1,8 @@
+body {
+  background: url('public/table-with-vegetables_1112-361.jpg') no-repeat fixed center;
+  background-size: cover;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
