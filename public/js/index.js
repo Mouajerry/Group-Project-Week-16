@@ -1,5 +1,5 @@
 // Get references to page elements
-var $exampleText = $("#name");
+var $exampleText = $("#addIngredients");
 var $exampleDescription = $("#email");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
@@ -12,34 +12,34 @@ var handleFormSubmit = function (event) {
 
   var example = {
     text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    // description: $exampleDescription.val().trim()
   };
-
-  if (!(example.text && example.description)) {
+// && example.description
+  if (!(example.text )) {
     alert("You must enter an example text and description!");
     return;
   }
 
-  API.saveExample(example).then(function () {
+  API.getExamples(example).then(function () {
     getExamples();
   });
 
   $exampleText.val("");
-  $exampleDescription.val("");
+  // $exampleDescription.val("");
 };
 
 var API = {
-  saveExample: function (example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: function (example) {
+  // saveExample: function (example) {
+  //   return $.ajax({
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     type: "POST",
+  //     url: "api/examples",
+  //     data: JSON.stringify(example)
+  //   });
+  // },
+  getExamples: function () {
     return $.ajax({
       url: "api/get-recipes/",
       type: "GET",
@@ -105,6 +105,9 @@ var API = {
   //   });
   // }
 };
+$submitBtn.on("click", handleFormSubmit);
+// $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
 
 // refreshExamples gets new examples from the db and repopulates the list
 // var refreshExamples = function () {
@@ -152,5 +155,3 @@ var API = {
 // };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", getExample);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
