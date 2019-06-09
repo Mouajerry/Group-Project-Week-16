@@ -6,6 +6,7 @@ var $exampleList = $("#example-list");
 var ingredientStorage = [];
 var userIngredients = [];
 
+
 // The API object contains methods for each kind of request we'll make
 var handleFormSubmit = function (event) {
   event.preventDefault();
