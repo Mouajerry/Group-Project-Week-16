@@ -1,27 +1,22 @@
 // Get references to page elements
-var $exampleText = $("#name");
-var $exampleDescription = $("#email");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
 var ingredientStorage = [];
 var userIngredients = [];
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+  saveExample: function() {
+    return  $.ajax({
+      url: "/api/store-search/",
+      method: "POST",
+      data: request
+    }).then( function() {
+      // console.log("search stored!")
     });
   },
   getExamples: function() {
     return $.ajax({
       url: "api/get-recipes/",
-      type: "POST",
+      type: "GET",
       data: {ingredients:[]}
     }).then(function(response){
       userIngredients = response[0]
@@ -78,15 +73,25 @@ var API = {
       }
 
 
-    })
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
     });
-  }
-};
+
+    //*-----------------------------------Event Listener for removing a Recipe----------------------------------
+$(".removeRecipe").click( function() {
+
+  // console.log(".removeRecipe clicked")
+
+  let recipeID = $(this).attr("data-remove"),
+      removeURL = "/api/remove-recipe/" + recipeID
+
+  // console.log("recipeID: ",recipeID)
+  // console.log("recipeName: ",recipeName)
+  // console.log("removeUrl: ",removeURL)
+  $.ajax({
+    url: removeURL,
+    method: "DELETE"
+  }).then( function() { location.reload() } )
+})
+
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {

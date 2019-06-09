@@ -136,8 +136,9 @@ module.exports = function(app) {
 
   })
 
+  app.get("/api/get-recipes", function(req, res) {
     //Build the api query. First build the q parameter
-    let data = JSON.parse(req.body.cook);
+    // let data = JSON.parse(req.body.cook);
     console.log(req.body.ingredient);
     // let data = JSON.parse(req.body);
     let data = req.body.ingredient;
@@ -189,7 +190,7 @@ module.exports = function(app) {
             }
             res.send(recipeArray)
           }).catch(function(error) { console.log(error)})
-  
+        });
   // Delete an example by id
   // app.delete("/api/examples/:id", function(req, res) {
   //   db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {

@@ -34,6 +34,44 @@
     <div class="row" id="main">
       <div class="col-12">
         <h2>Welcome to Golden Table</h2>
+        <ul id="example-list" class="list-group">
+        {{#each Ingredient}} 
+        <li>
+            {{this.id}}. {{this.Ingredient}}
+          {{/each}}
+          </li>
+<div id='add'>
+    <h2>Add Ingredient: </h2>
+    <div class="col-md-4 step1">
+            <p class="stepText">Step 1. Add and mark the ingredients you have.</p>
+
+            {{!--Step 1 Sub Row Add Ingredients--}}
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="text" class="newIngredient" placeholder="Add Ingredient">
+                    <button type="button" class="addIngredient"><div class="col-md-4 step1">
+            <p class="stepText">Step 1. Add and mark the ingredients you have.</p>
+
+            {{!--Step 1 Sub Row Add Ingredients--}}
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="text" class="newIngredient" placeholder="Add Ingredient">
+                    <button type="button" class="addIngredient"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            </button>
+                </div>
+            </div>
+    {{!-- <form class="create-update-form" action="/api/add-ingredient/" method="POST">
+        <div class="form-group">
+            <label for="dab">Ingredient:</label>
+            <input type="text" id="dab" name="ingredient">
+        </div>
+        <li><button id="submit" type="button" class="button">Add Ingredient</button></li>
+    </form>
+</div>
+         --}}
         <div class="callout">
           <h5>This is a callout.</h5>
           <p>It has an easy to override visual style, and is appropriately subdued.</p>

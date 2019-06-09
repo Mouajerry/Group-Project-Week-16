@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
        
         Recipe.belongsTo(models.User, { foreignKey: { allowNull: false } } )
         
-        Recipe.hasMany(models.recipeIngredient, { onDelete: "cascade" } )  
+        Recipe.findAll(models.recipeIngredient, { onDelete: "cascade" } )  
     }
   
     return Recipe
