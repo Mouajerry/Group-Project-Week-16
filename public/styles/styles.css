@@ -1,6 +1,8 @@
 body {
-  background-image: url('../public/table-with-vegetables_1112-361.jpg');
- }
+  background: url('../images/table-with-vegetables_1112-361.jpg') no-repeat fixed center;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
 .list-group-item {
   line-height: 2.5;
@@ -11,11 +13,11 @@ body {
 }
 
 .top-bar, .top-bar ul {
-  background-color: peru;
+  background-color: grey;
 }
 
 .quote {
-  color: whitesmoke;
+  color: black;
   text-align: center;
 }
 
