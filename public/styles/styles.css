@@ -1,6 +1,7 @@
 body {
-  background: url('public/table-with-vegetables_1112-361.jpg') no-repeat fixed center;
+  background: url('../images/table-with-vegetables_1112-361.jpg') no-repeat fixed center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .list-group-item {
@@ -12,17 +13,25 @@ body {
 }
 
 .top-bar, .top-bar ul {
-  background-color: peru;
+  background-color: grey;
 }
 
 .quote {
-  color: whitesmoke;
+  color: black;
   text-align: center;
 }
 
 #add {
   clear: both;
  
+}
+
+/* Ingredient Area */
+
+
+#add {
+  clear: both;
+  margin-left: 25%;
 }
 
 .stepText {
