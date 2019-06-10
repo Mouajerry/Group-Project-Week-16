@@ -10,20 +10,21 @@
               <li>
             </ul>
           </div>
-          <div class="top-bar-right">
-            <ul class="loginWrapper">
-              <li><input class="enterUser choose" type="text" placeholder="Name"></li>
-              <li><input class="enterEmail choose" type="email" placeholder="Email"></li>
-              <li><button class="loginBtn" type="button">Login</button></li>
-            </ul>
-          </div>
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="First name">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              
+            </div>
         </div>
         <div class="top-bar">
           <div class="top-bar-left">
-          <blockquote class="quote">
-            A receipe has no soul. YOU, as the cook, must bring soul to the receipe.
-            <cite class="quote">Thomas Keller</cite>
-          </blockquote>
+            <blockquote class="quote">
+              A receipe has no soul. YOU, as the cook, must bring soul to the receipe.
+              <cite class="quote">Thomas Keller</cite>
+            </blockquote>
           </div>
         </div>
       </div>
@@ -32,49 +33,49 @@
     <div class="row" id="main">
       <div class="col-12">
         <h2>Welcome to Golden Table</h2>
-  
+
 
         {{!--Step 1--}}
         <div class="col-md-4 step1">
-            <p class="stepText">Step 1. Add and mark the ingredients you have.</p>
+          <p class="stepText">Step 1. Add and mark the ingredients you have.</p>
 
-            {{!--Step 1 Sub Row Add Ingredients--}}
-            <div class="row">
-                <div class="col-md-12">
-                    <input id="addIngredients" type="text" class="newIngredient" placeholder="Add Ingredient">
-                    <button id="submit" type="button" class="addIngredient"><i class="fas fa-plus"></i></button>
-                </div>
+          {{!--Step 1 Sub Row Add Ingredients--}}
+          <div class="row">
+            <div class="col-md-12">
+              <input type="text" class="newIngredient" placeholder="Add Ingredient">
+              <button type="button" class="addIngredient"><i class="fas fa-plus"></i></button>
             </div>
-               {{#each Ingredient}}
-                <div class="row">
-                    <div class="col-8">
-                        <p class="ingredient" data-id={{id}} id={{id}}>{{label}}</p>
-                    </div>
-                </div>
-            {{/each}}
+          </div>
+          {{#each Ingredient}}
+          <div class="row">
+            <div class="col-8">
+              <p class="ingredient" data-id={{id}} id={{id}}>{{label}}</p>
+            </div>
+          </div>
+          {{/each}}
         </div>
-            {{!--Step 1 
+        {{!--Step 1 
             
             {{!--Custom Ingredient--}}
-            {{#each Ingredient}}
-                <div class="row">
-                    <div class="col-8">
-                        <p class="ingredient" data-id={{id}} id={{id}}>{{label}}</p>
-                    </div>
-                    <div class="col-2">
-                        {{!-- <button type="button" data-use="{{used}}" class="useIngredient notused {{id}}"><i class="fas fa-check"></i></button> --}}
-                    </div>
-                    <div class="col-2">
-                        {{!-- <button type="button" data-remove="{{id}}" class="removeIngredient"><i class="fas fa-trash"></i></button> --}}
-                    </div>
-                </div>
-            {{/each}}
+        {{#each Ingredient}}
+        <div class="row">
+          <div class="col-8">
+            <p class="ingredient" data-id={{id}} id={{id}}>{{label}}</p>
+          </div>
+          <div class="col-2">
+            {{!-- <button type="button" data-use="{{used}}" class="useIngredient notused {{id}}"><i class="fas fa-check"></i></button> --}}
+          </div>
+          <div class="col-2">
+            {{!-- <button type="button" data-remove="{{id}}" class="removeIngredient"><i class="fas fa-trash"></i></button> --}}
+          </div>
         </div>
-            
-            </button>
-                </div>
-            </div>
-    {{!-- <form class="create-update-form" action="/api/add-ingredient/" method="POST">
+        {{/each}}
+      </div>
+
+      </button>
+    </div>
+  </div>
+  {{!-- <form class="create-update-form" action="/api/add-ingredient/" method="POST">
         <div class="form-group">
             <label for="dab">Ingredient:</label>
             <input type="text" id="dab" name="ingredient">
@@ -83,22 +84,22 @@
     </form>
 </div>
          --}}
-        <div class="callout">
-          <h5>This is a callout.</h5>
-          <p>It has an easy to override visual style, and is appropriately subdued.</p>
-          <a href="#">It's dangerous to go alone, take this.</a>
-        </div>
-      </div>
-    </div>
-
-   <!-- Div to add recipes -->
-    <div class="col-md-8 step2">
-            <p class="stepText">Step 2. Get the recipes.</p>
-            <button class="getRecipes">Get Recipes</button>
-            <div class="container" id="recipeResults"></div>
-        </div>
-
+  <div class="callout">
+    <h5>This is a callout.</h5>
+    <p>It has an easy to override visual style, and is appropriately subdued.</p>
+    <a href="#">It's dangerous to go alone, take this.</a>
   </div>
+</div>
+</div>
+
+<!-- Div to add recipes -->
+<div class="col-md-8 step2">
+  <p class="stepText">Step 2. Get the recipes.</p>
+  <button class="getRecipes">Get Recipes</button>
+  <div class="container" id="recipeResults"></div>
+</div>
+
+</div>
 </div>
 
 

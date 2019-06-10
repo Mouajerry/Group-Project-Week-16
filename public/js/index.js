@@ -6,6 +6,7 @@ var $exampleList = $("#example-list");
 var ingredientStorage = [];
 var userIngredients = [];
 
+
 // The API object contains methods for each kind of request we'll make
 var handleFormSubmit = function (event) {
   event.preventDefault();
@@ -20,9 +21,10 @@ var handleFormSubmit = function (event) {
     return;
   }
 
-  API.getExamples(example).then(function () {
-    getExamples();
-  });
+  API.getExamples(example)
+  // .then(function () {
+  //   getExamples();
+  // });
 
   $exampleText.val("");
   // $exampleDescription.val("");
@@ -39,11 +41,11 @@ var API = {
   //     data: JSON.stringify(example)
   //   });
   // },
-  getExamples: function () {
+  getExamples: function (example) {
     return $.ajax({
       url: "api/get-recipes/",
       type: "GET",
-      data: { ingredients: [] }
+      data: { ingredients: [example] }
     }).then(function(response) {
       userIngredients = response[0];
       // console.log("user ingredients: ",userIngredients)
