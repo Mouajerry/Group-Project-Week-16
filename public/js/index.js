@@ -67,6 +67,7 @@ var API = {
           smallColumn = $("<div>"),
           img = $("<img>"),
           p = $("<p>"),
+          q = $("<q>"),
           saveButton = $('<button type="button"><i class="fas fa-heart saveHeart"></i></button>')
 
 
@@ -80,7 +81,10 @@ var API = {
        smallColumn.addClass("buttonColumn"),
                  p.addClass("recipeLabel")
                   .attr("data-id", index)
-                  .text(label),
+                  .text(label)
+                  q.addClass("ingredientArray")
+                  .attr("data-id", index)
+                  .text(ingredientArray)
               img.addClass("recipeImg openRecipe")
                   .attr("data-id", index)
                   .attr("src", image)
@@ -93,7 +97,8 @@ var API = {
                   .attr("data-heart", index),
 
 
-        bigColumn.append(p),
+        bigColumn.append(p, q),
+      
         smallColumn.append(saveButton),
         row.append(smallColumn, bigColumn),
         wrapper.append(img, row),
@@ -109,6 +114,9 @@ var API = {
   // }
 };
 $submitBtn.on("click", handleFormSubmit);
+
+
+
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 
