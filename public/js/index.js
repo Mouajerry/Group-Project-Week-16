@@ -57,6 +57,7 @@ var API = {
           index = i - 1,
           label = response[i].label,
           image = response[i].image,
+          ingredients = response[i].ingredients,
           calories = response[i].calories,
           servings = response[i].servings,
           time = response[i].time,
@@ -66,7 +67,8 @@ var API = {
           bigColumn = $("<div>"),
           smallColumn = $("<div>"),
           img = $("<img>"),
-          p = $("<p>"),
+          pIngredients = $("<p>"),
+          pLabel =$("<p>"),
           saveButton = $('<button type="button"><i class="fas fa-heart saveHeart"></i></button>')
 
 
@@ -78,14 +80,18 @@ var API = {
         row.addClass("labelRow"),
          bigColumn.addClass("labelColumn"),
        smallColumn.addClass("buttonColumn"),
-                 p.addClass("recipeLabel")
+                  pLabel.addClass("recipeLabel")
                   .attr("data-id", index)
-                  .text(label),
+                  .text(label)
+                  pIngredients.addClass("recipeIngredients")
+                  .append(ingredientArray)
+                  
               img.addClass("recipeImg openRecipe")
                   .attr("data-id", index)
                   .attr("src", image)
                   .attr("data-src", url)
-                  .attr("data-calories", calories)
+                  
+                  .text("data-calories", calories)
                   .attr("data-servings", servings)
                   .attr("data-time", time),
         saveButton.addClass("saveBtn saveRecipe notsaved")
@@ -93,7 +99,8 @@ var API = {
                   .attr("data-heart", index),
 
 
-        bigColumn.append(p),
+        bigColumn.append(pLabel),
+        bigColumn.append(pIngredients),
         smallColumn.append(saveButton),
         row.append(smallColumn, bigColumn),
         wrapper.append(img, row),
