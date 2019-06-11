@@ -1,6 +1,6 @@
 var db = require("../models");
 var axios = require("axios");
-const edamam = require("../routes/edamam");
+const Edaman = require("../routes/edamam");
 
 module.exports = function(app) {
   app.post("/api/users", function(req, res) {
@@ -56,14 +56,17 @@ module.exports = function(app) {
   app.get("/api/get-recipes", function(req, res) {
     //*This is the route to get the recipes from the api
     //!ROUTE
-    console.log(req.body.ingredient);
-    var data = req.body.ingredient;
+    // console.log(req.query);
+    // console.log(req.query.ingredients);
+    var data = req.query.ingredients;
     var search = data.join("+");
+    
+    console.log(search);
 
-    console.log("\nincoming array: ", data);
-    console.log("\nq:", search);
+    // console.log("\nincoming array: ", data);
+    // console.log("\nq:", search);
 
-    edamam.search(search).then(edamamRes =>{
+    Edaman.search(search).then(edamamRes =>{
       res.json(edamamRes);
     })
     
