@@ -5,7 +5,7 @@ var appKey = process.env.appKey;
 
 const Edaman = {
     search: (search)=>{
-
+      console.log(search)
     var query =
       "https://api.edamam.com/search?q=" +
       search +
@@ -15,7 +15,7 @@ const Edaman = {
       appKey +
       "&from=0&to=8";
 
-    console.log("query:", query);
+    // console.log("query:", query);
 
     //Make the API Call
     return axios

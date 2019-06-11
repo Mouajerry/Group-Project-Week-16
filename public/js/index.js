@@ -42,10 +42,11 @@ var API = {
   //   });
   // },
   getExamples: function (example) {
+    console.log(example.text);
     return $.ajax({
-      url: "api/get-recipes/",
+      url: "/api/get-recipes",
       type: "GET",
-      data: { ingredients: [example] }
+      data: { ingredients: [example.text] }
     }).then(function(response) {
       userIngredients = response[0];
       // console.log("user ingredients: ",userIngredients)
