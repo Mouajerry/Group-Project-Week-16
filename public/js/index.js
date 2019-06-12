@@ -72,10 +72,10 @@ var API = {
           pUrl = $("<p>"),
           saveButton = $('<button type="button"><i class="fas fa-heart saveHeart"></i></button>')
 
-
+          
         ingredientStorage.push(ingredientArray),
          // console.log(ingredientStorage)
-
+        console.log(response);
           //Build the list of recipe results dynamically
           wrapper.addClass("apiRecipe"),
         row.addClass("labelRow"),
@@ -110,6 +110,8 @@ var API = {
         row.append(smallColumn, bigColumn),
         wrapper.append(img, row),
        $("#example-list").append(wrapper);
+     
+       
       }
     });
   },
@@ -121,6 +123,10 @@ var API = {
   // }
 };
 $submitBtn.on("click", handleFormSubmit);
+
+
+
+
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 

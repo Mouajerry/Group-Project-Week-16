@@ -1,3 +1,4 @@
+/**--------------Main Body---------------*/
 body {
   background: url('../images/table-with-vegetables_1112-361.jpg') no-repeat fixed center;
   background-size: cover;
@@ -14,11 +15,13 @@ body {
 
 .top-bar, .top-bar ul {
   background-color: grey;
+  
 }
 
 .quote {
   color: black;
   text-align: center;
+  
 }
 
 #add {
@@ -26,58 +29,41 @@ body {
  
 }
 
-/* Ingredient Area */
 
 
-#add {
-  clear: both;
-  margin-left: 25%;
-}
 
-.stepText {
-  margin: 10px 0px;
-}
 
-.tableHead {
-  text-decoration: underline;
-  margin-bottom: 5px;
-}
 
-.newIngredient {
-  margin: 5px auto 20px;
-  padding: 2px 2px;
-}
 
-.addIngredient {
-  background-color: #ffffff;
-  margin: 5px 10px 20px 15px;
-  border: 2px outset #ffffff;
+/**-----------------RECIPE RESULTS SECTION------------------------*/
+
+
+
+.getRecipes {
+  background-color: #bf1313;
+  margin: 10px 10px 20px 0px;
+  border: 2px outset #bf1313;
   padding: 2px 10px;
-  transition: color 1s;
+  color: #ffffff;
+  transition: color 0.5s, background-color 0.5s;
 }
 
-.addIngredient:hover {
-  color: #ee8586;
-}
+.apiRecipe {
+   width: 90%;
+   border: 5px solid #ffffff;
+   border-radius: 75em 75em 75em 75em;
+   display: inline-block;
+   margin: 1%;
+   overflow: hidden;
+   position: relative;
+   background-color: #ffffff;
+   color: #0a0a0a;
+  }
 
-.addIngredient:active {
-  border: 2px inset #ffffff;
-}
+  
 
-.ingredient {
-  display: inline-block;
-}
 
-p.ingredient {
-  font-size: 1.2em;
-}
 
-.ingredientHeader {
-  margin-left: 10px;
-  font-size: 1.5em
-}
 
-.ingredientHeader2 {
-  margin-left: 11px;
-  font-size: 1.1em;
-}
+  
+ 
