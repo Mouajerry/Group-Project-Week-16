@@ -21,6 +21,10 @@ var handleFormSubmit = function (event) {
     return;
   }
 
+  API.saveExample(example).then(function() {
+    refreshExamples();
+  });
+
   API.getExamples(example)
   // .then(function () {
   //   getExamples();
@@ -69,25 +73,27 @@ var API = {
           img = $("<img>"),
           pIngredients = $("<p>"),
           pLabel =$("<p>"),
-          pUrl =$("<p>"),
+          pUrl = $("<p>"),
           saveButton = $('<button type="button"><i class="fas fa-heart saveHeart"></i></button>')
 
-
+          
         ingredientStorage.push(ingredientArray),
          // console.log(ingredientStorage)
-
+        console.log(response);
           //Build the list of recipe results dynamically
           wrapper.addClass("apiRecipe"),
         row.addClass("labelRow"),
          bigColumn.addClass("labelColumn"),
        smallColumn.addClass("buttonColumn"),
+                  pUrl.addClass("urllabel")
+                  .attr("data-id", index)
+                  .append(url)
                   pLabel.addClass("recipeLabel")
                   .attr("data-id", index)
                   .text(label)
                   pIngredients.addClass("recipeIngredients")
                   .append(ingredientArray)
-                  pUrl.addClass("url")
-                  .append()
+                  
               img.addClass("recipeImg openRecipe")
                   .attr("data-id", index)
                   .attr("src", image)
@@ -103,10 +109,13 @@ var API = {
 
         bigColumn.append(pLabel),
         bigColumn.append(pIngredients),
+        bigColumn.append(pUrl),
         smallColumn.append(saveButton),
         row.append(smallColumn, bigColumn),
         wrapper.append(img, row),
        $("#example-list").append(wrapper);
+     
+       
       }
     });
   },
@@ -118,6 +127,7 @@ var API = {
   // }
 };
 $submitBtn.on("click", handleFormSubmit);
+
 
 
 
