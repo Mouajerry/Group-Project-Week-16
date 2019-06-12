@@ -21,10 +21,6 @@ var handleFormSubmit = function (event) {
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
-
   API.getExamples(example)
   // .then(function () {
   //   getExamples();
