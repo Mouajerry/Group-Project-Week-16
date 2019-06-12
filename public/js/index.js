@@ -69,6 +69,7 @@ var API = {
           img = $("<img>"),
           pIngredients = $("<p>"),
           pLabel =$("<p>"),
+          pUrl = $("<p>"),
           saveButton = $('<button type="button"><i class="fas fa-heart saveHeart"></i></button>')
 
 
@@ -80,6 +81,9 @@ var API = {
         row.addClass("labelRow"),
          bigColumn.addClass("labelColumn"),
        smallColumn.addClass("buttonColumn"),
+                  pUrl.addClass("urllabel")
+                  .attr("data-id", index)
+                  .append(url)
                   pLabel.addClass("recipeLabel")
                   .attr("data-id", index)
                   .text(label)
@@ -101,6 +105,7 @@ var API = {
 
         bigColumn.append(pLabel),
         bigColumn.append(pIngredients),
+        bigColumn.append(pUrl),
         smallColumn.append(saveButton),
         row.append(smallColumn, bigColumn),
         wrapper.append(img, row),
