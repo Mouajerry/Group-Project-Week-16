@@ -1,3 +1,4 @@
+/**--------------Main Body---------------*/
 body {
   background: url('../images/table-with-vegetables_1112-361.jpg') no-repeat fixed center;
   background-size: cover;
@@ -14,11 +15,13 @@ body {
 
 .top-bar, .top-bar ul {
   background-color: grey;
+  
 }
 
 .quote {
   color: black;
   text-align: center;
+  
 }
 
 #add {
@@ -26,7 +29,218 @@ body {
  
 }
 
-.example-list {
-  background-color: blue;
-  font-size: 15px;
+
+/**--------------------Ingredients Section--------------------------*/
+
+.stepText {
+  margin: 10px 0px;
 }
+
+.tableHead {
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.description {
+  font-size: 1.2em;
+}
+
+.newIngredient {
+  margin: 5px auto 20px;
+  padding: 2px 2px;
+}
+
+.addIngredient {
+  background-color: #ffffff;
+  margin: 5px 10px 20px 15px;
+  border: 2px outset #ffffff;
+  padding: 2px 10px;
+  color: #a7e7ed;
+  transition: color 1s;
+}
+
+.addIngredient:hover {
+  color: #ee8586;
+}
+
+.addIngredient:active {
+  border: 2px inset #ffffff;
+}
+
+.ingredient {
+  display: inline-block;
+}
+
+p.ingredient {
+  font-size: 1.2em;
+}
+
+.ingredientHeader {
+  margin-left: 10px;
+  font-size: 1.1em
+}
+
+.ingredientHeader2 {
+  margin-left: 11px;
+  font-size: 1.1em;
+}
+
+.pieHeader {
+  margin-left: 5px;
+  font-size: 1.1em;
+}
+
+.useIngredient {
+  display: inline-block;
+  transition: color 0.5s;
+  padding: 5px 10px;
+}
+
+.useIngredient:hover {
+  color: #ee8586;
+}
+
+.removeIngredient {
+  display: inline-block;
+  color: #a7e7ed;
+  transition: color 0.5s;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  border: 0px;
+}
+
+.removeIngredient:hover {
+  color: #ee8586
+}
+
+.popPercent {
+  display: inline-block;
+  padding: 5px;
+}
+
+.used {
+  background-color: #ee8586;
+  border-color: #a7e7ed;
+  color: #a7e7ed;
+}
+
+.used:hover {
+  color: #a7e7ed;
+}
+
+.notused {
+  background-color: white;
+  border-color: #a7e7ed;
+  color: #a7e7ed;
+}
+
+
+
+
+/**-----------------RECIPE RESULTS SECTION------------------------*/
+
+.recipeDropDown {
+  margin-bottom: 50px;
+}
+
+.getRecipes {
+  background-color: #ee8586;
+  margin: 5px 10px 20px 0px;
+  border: 2px outset #ee8586;
+  padding: 2px 10px;
+  color: #ffffff;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.getRecipes:hover {
+  color: #ee8586;
+  background-color: #ffffff;
+}
+
+.apiRecipe {
+   width: 46%;
+   border: 5px solid #ffffff;
+   border-radius: 20px 20px 0px 20px;
+   display: inline-block;
+   margin: 1%;
+   overflow: hidden;
+   position: relative;
+   background-color: #ffffff;
+   color: #0a0a0a;
+  }
+
+  .labelRow {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    height: 35px;
+    font-size: 1em;
+  }
+
+  .labelColumn {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px;
+    padding: 0px;
+    width: 70%;
+    display: inline-block;
+  }
+
+  .buttonColumn {
+    padding: 0px;
+    margin: 0px;
+    width: 20%;
+    float:left;
+  }
+
+  .recipeLabel {
+    display: inline-block;
+    font-size: 1em;
+    margin: 0px 10px 0px 0px;
+    padding: 5px 0px 0px;
+  }
+
+  .recipeImg {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding-bottom: 5px;
+    filter: none;
+    transition: filter 1s;
+  }
+
+  .recipeImg:hover {
+    filter: brightness(120%) contrast(80%) saturate(110%) opacity(80%);
+  }
+
+  .saveRecipe {
+    margin: 0px;
+    padding: 5px 10px;
+    border-radius: 5px 5px 0px 15px;
+  }
+
+  .saved {
+    background-color: #a7e7ed;
+    border: 2px solid #ee8586;
+    color: #ee8586;
+  }
+
+  .saveHeart {
+    text-shadow:
+      0px -1px 0px #ee8586,
+      -1px 0px 0px #ee8586,
+      0px 1px 0px #ee8586,
+      1px 0px 0px #ee8586;
+  }
+
+  .notsaved {
+    background-color: #ffffff;
+    border: 2px solid #ee8586;
+    color: #ffffff;
+    transition: background-color 0.75s;
+  }
+
+  .notsaved:hover {
+    background-color: #a7e7ed;
+  }
